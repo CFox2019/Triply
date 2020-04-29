@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const aylien = require('aylien_textapi')
 const dotenv = require('dotenv');
 dotenv.config();
@@ -16,7 +17,13 @@ app.use(express.json())
 app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
+    console.log('index')
+    res.sendFile('dist/index.html', { root: path.join(__dirname, '../../dist') })
+})
+
+app.get('/create_trip', function (req, res) {
+    console.log('create_trip')
+    res.sendFile('create_trip.html', { root: path.join(__dirname, '../../dist') })
 })
 
 app.post('/fetchSentiment', function (req, res) {
@@ -42,5 +49,5 @@ app.post('/fetchSentiment', function (req, res) {
 
 const port = process.env.PORT
 app.listen(port, function () {
-    console.log(`News Article NLP app listening on port ${port}!`)
+    console.log(`Triply app listening on port ${port}!`)
 })

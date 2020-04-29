@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <%= require('html-loader!../partials/head.html') %>
+
+    <body>
+
+        <%= require('html-loader!../partials/header.html') %>
+
+        <main>
+            <h1>Create a Trip</h1>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="url" type="text" name="input" value="" placeholder="URL">
+                    <input id="submit" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            <section>
+
+            <section>
+                <strong>Form Results:</strong>
+                <div id="results"></div>
+            </section>
+        </main>
+
+        <%= require('html-loader!../partials/footer.html') %>
+
+        <!-- <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script> -->
+
+    </body>
+</html>

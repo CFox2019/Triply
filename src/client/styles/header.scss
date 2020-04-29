@@ -1,5 +1,48 @@
 header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px 40px;
+    padding: 40px 20px;
+    background-color: #00ad97;
+    height: 165px;
+}
+
+.logo-container {
+    color: #ffffff;
+    flex: 2;
+    order: 1;
+}
+
+.logo {
+    background-image: url(../media/triply.svg);
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 150px;
+    height: 100%;
+}
+
+.navigation {
+    flex: 1;
+    order: 2;
+    text-align: right;
+}
+
+.navigation a:link, a:visited {
+    font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 10px 0px 10px 10px;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+#create_trip {
+    background-color: #ffffff;
+    color: #00ad97;
+    border: 4px solid #30ddc7;
+    border-radius: 12px;
+    padding: 8px;
 }

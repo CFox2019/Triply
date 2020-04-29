@@ -25,13 +25,24 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
+            },
+            {
+                test: /\.svg$/,
+                use: {
+                    loader: 'svg-url-loader',
+                    options: {}
+                }
             }
         ]
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/client/views/index.html",
+            template: "./src/client/views/templates/index.html",
             filename: "./index.html",
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/client/views/templates/create_trip.html",
+            filename: "./create_trip.html",
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css'

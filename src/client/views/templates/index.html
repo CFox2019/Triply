@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-    </head>
+    <%= require('html-loader!../partials/head.html') %>
 
     <body>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+        <%= require('html-loader!../partials/header.html') %>
 
         <main>
+            <h1>Where to?</h1>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <input id="url" type="text" name="input" value="" placeholder="URL">
@@ -30,12 +21,9 @@
             </section>
         </main>
 
-        <footer>
-            <p>© 2020 Courtney Fox</p>
-            <p><a href="https://github.com/CFox2019/fend/tree/refresh-2019">View this project on GitHub.com</a></p>
-        </footer>
+        <%= require('html-loader!../partials/footer.html') %>
 
-        <script>
+        <!-- <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
@@ -43,7 +31,7 @@
                     navigator.serviceWorker.register('/service-worker.js');
                 });
             }
-        </script>
+        </script> -->
 
     </body>
 </html>
