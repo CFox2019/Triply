@@ -13,26 +13,27 @@ async function handleSubmit(event) {
     const submit = document.getElementById('submit')
     submit.value = 'Loading...'
     submit.disabled = true
-    const results = document.getElementById('results')
-    results.innerHTML = ""
+    // TODO: update to use new form
+    // const results = document.getElementById('results')
+    // results.innerHTML = ""
 
-    console.log("::: Form Submitted :::")
-    const response = await fetch('/fetchSentiment', {
-        method: 'post',
-        mode: 'cors',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            url: formText
-        })
-    })
-    const json = await response.json()
-    results.innerHTML = json.sentiment
-    submit.value = 'Submit'
-    submit.disabled = false
+    // console.log("::: Form Submitted :::")
+    // const response = await fetch('/fetchSentiment', {
+    //     method: 'post',
+    //     mode: 'cors',
+    //     credentials: 'same-origin',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         'Accept': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         url: formText
+    //     })
+    // })
+    // const json = await response.json()
+    // results.innerHTML = json.sentiment
+    // submit.value = 'Submit'
+    // submit.disabled = false
 }
 
 export { handleSubmit }

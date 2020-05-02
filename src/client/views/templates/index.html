@@ -7,17 +7,18 @@
         <%= require('html-loader!../partials/header.html') %>
 
         <main>
-            <h1>Where to?</h1>
-            <section>
+            <section id="where_to">
+                <h1>Where to?</h1>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="url" type="text" name="input" value="" placeholder="URL">
-                    <input id="submit" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input id="destination" type="text" name="input" value="" placeholder="Enter Destination">
+                    <input id="arrival" type="text" name="input" value="" placeholder="Arrival mm/dd/yyyy">
+                    <input id="departure" type="text" name="input" value="" placeholder="Departure mm/dd/yyyy">
+                    <input id="create_trip_submit" type="submit" name="" value="Create Trip" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
-            <section>
+            </section>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+            <section id="inspiration">
+                <h1>Inspiration</h1>
             </section>
         </main>
 

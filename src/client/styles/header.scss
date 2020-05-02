@@ -1,10 +1,11 @@
 header {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
     padding: 40px 20px;
     background-color: #00ad97;
-    height: 165px;
+    height: 230px;
 }
 
 .logo-container {
@@ -25,6 +26,7 @@ header {
     flex: 1;
     order: 2;
     text-align: right;
+    padding-top: 20px;
 }
 
 .navigation a:link, a:visited {
