@@ -10,50 +10,11 @@ main {
     padding: 20px;
 }
 
-main input {
-    padding: 5px 20px;
-    width: 100%;
-    max-width: 800px;
-    line-height: 40px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.8)
-}
-
 section {
     margin: 50px auto;
 }
 
 input {
     font-family: 'Comfortaa', cursive;
-}
-
-#where_to {
-    color: #ffffff;
-    border: 1px solid #545454;
-    border-radius: 3px;
-    background: url(../media/bus.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    // background-position: left 0px bottom 50px;
-    padding: 20px;
-    margin: 10px auto;
-    border-radius: 10px;
-    border: 1px solid #f1f1f1;
-}
-
-#where_to h1 {
-    font-size: 4em;
-    padding: 20px 0px 40px 0px;
-}
-
-#inspiration h1 {
-    font-size: 3em;
-}
-
-@media only screen and (max-width: 600px) {
-    //TODO: update to support tablet and desktop
+    font-size: 18px;
 }

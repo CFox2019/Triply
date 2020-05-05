@@ -1,0 +1,59 @@
+#inspiration h1 {
+    font-size: 3em;
+    padding-bottom: 20px;
+}
+
+#inspiration_container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#inspiration_container h2 {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+%cell_styles {
+    flex: 1 35%;
+    padding: 20px 20px 300px 20px;
+    color: #ffffff;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: left 0px bottom -20px;
+    background-size: 100%;
+    margin-bottom: 15px;
+}
+
+#camping_cell {
+    @extend %cell_styles;
+    background-image: url(../media/camping.jpg);
+}
+
+#beach_cell {
+    @extend %cell_styles;
+    background-image: url(../media/beach.jpg);
+    background-size: 120%;
+}
+
+#lake_cell {
+    @extend %cell_styles;
+    background-image: url(../media/lake.jpg);
+    background-position: left 0px bottom -170px;
+}
+
+@media only screen and (min-width: 1000px) {
+    %cell_styles {
+        margin: 15px;
+    }
+
+    #inspiration_container {
+        flex-direction: row;
+    }
+}
+
+// @media only screen and (min-width: 1100px) {
+//     #inspiration_container {
+        
+//     }
+// }
