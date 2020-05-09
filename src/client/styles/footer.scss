@@ -1,7 +1,7 @@
 footer {
     display: flex;
     flex-wrap: wrap;
-    background-color: #00ad97;;
+    background-color: #00ad97;
     color: #dedede;
     padding: 40px 20px;
     font-size: 1.5em;
@@ -28,14 +28,50 @@ footer a:hover {
     order: 1;
 }
 
+.footer_social h2 {
+    margin-bottom: 20px;
+}
+
+.footer_social div {
+    display: inline-block;
+}
+
 .footer_nav {
     flex: 1;
     order: 2;
-    text-align: right;
+    margin-top: 30px;
 }
 
 .footer_nav a {
-    padding: 10px 10px 0px 10px;
+    padding: 10px 10px 0px 0px;
+}
+
+%icon_styles {
+    margin: 5px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+#fb_icon {
+    flex: 1;
+    order: 1;
+    @extend %icon_styles;
+    background: url(../media/fb.jpg) no-repeat center center / 100%;
+}
+
+#ig_icon {
+    flex: 1;
+    order: 2;
+    @extend %icon_styles;
+    background: url(../media/ig.jpg) no-repeat center center / 145%;
+}
+
+#twitter_icon {
+    flex: 1;
+    order: 3;
+    @extend %icon_styles;
+    background: url(../media/t.jpg) no-repeat center center / 140%;
 }
 
 .email_signup {
@@ -47,6 +83,10 @@ footer a:hover {
 
 #your_email {
     text-align: center;
+    border-radius: 8px;
+    border: none;
+    text-align: left;
+    padding: 10px 80px 10px 20px;
 }
 
 #email_submit {
@@ -54,5 +94,14 @@ footer a:hover {
     color: #00ad97;
     border: 4px solid #30ddc7;
     border-radius: 12px;
+    margin-top: 5px;
     padding: 8px;
+}
+
+
+@media only screen and (min-width: 540px) {
+    .footer_nav {
+        text-align: right;
+        margin-top: auto;
+    }
 }

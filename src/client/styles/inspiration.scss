@@ -16,7 +16,7 @@
 
 %cell_styles {
     flex: 1 35%;
-    padding: 20px 20px 300px 20px;
+    padding: 20px 20px 225px 20px;
     color: #ffffff;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -29,29 +29,28 @@
 
 #island_cell {
     @extend %cell_styles;
-    background: url(../media/island.jpg) no-repeat center center / 140%;
+    background: url(../media/island.jpg) no-repeat center center / 150%;
 }
 
 #lake_cell {
     @extend %cell_styles;
-    background: url(../media/lake.jpg) no-repeat center bottom -170px / 100%;
+    background: url(../media/lake.jpg) no-repeat center bottom -170px / 120%;
 }
 
 #ski_cell {
     @extend %cell_styles;
-    background: url(../media/ski.jpg) no-repeat center center / 140%;
+    background: url(../media/ski.jpg) no-repeat center center / 165%;
 }
 
 #beach_cell {
     @extend %cell_styles;
-    background: url(../media/beach.jpg) no-repeat center center / 140%;
+    background: url(../media/beach.jpg) no-repeat center center / 160%;
 }
 
 #theme_park_cell {
     @extend %cell_styles;
-    background: url(../media/theme-park.jpg) no-repeat center center / 140%;
+    background: url(../media/theme-park.jpg) no-repeat center center / 165%;
 }
-
 
 
 @media only screen and (min-width: 750px) {
@@ -67,5 +66,6 @@
 @media only screen and (min-width: 1300px) {
     %cell_styles {
         flex: 1 25%;
+        padding: 20px 20px 300px 20px;
     }
 }
