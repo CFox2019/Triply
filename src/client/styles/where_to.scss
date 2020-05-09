@@ -34,14 +34,26 @@
     display: block;
 }
 
-#arrival {
+.arrival_input {
     @extend %where_to_input;
     display: block;
 }
 
-#departure {
+.arrival_input_error {
     @extend %where_to_input;
     display: block;
+    border: 4px solid #ff0000;
+}
+
+.departure_input {
+    @extend %where_to_input;
+    display: block;
+}
+
+.departure_input_error {
+    @extend %where_to_input;
+    display: block;
+    border: 4px solid #ff0000;
 }
 
 #create_trip_submit {
