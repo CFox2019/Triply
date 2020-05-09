@@ -1,13 +1,10 @@
 const express = require('express')
 const path = require('path')
 const aylien = require('aylien_textapi')
-const dotenv = require('dotenv');
-dotenv.config();
-
-const textapi = new aylien({
-    application_id: process.env.API_ID,
-    application_key: process.env.API_KEY
-})
+const dotenv = require('dotenv')
+const LocalStorage = require('node-localstorage').LocalStorage
+const localstorage = new LocalStorage('./triply_data')
+dotenv.config()
 
 const app = express()
 
@@ -17,34 +14,32 @@ app.use(express.json())
 app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
-    console.log('index')
     res.sendFile('dist/index.html', { root: path.join(__dirname, '../../dist') })
 })
 
-app.get('/create_trip', function (req, res) {
-    console.log('create_trip')
-    res.sendFile('create_trip.html', { root: path.join(__dirname, '../../dist') })
+app.get('/my_trips', function (req, res) {
+    res.sendFile('my_trips.html', { root: path.join(__dirname, '../../dist') })
 })
 
-app.post('/fetchSentiment', function (req, res) {
-    const url = req.body.url
-    textapi.sentiment({
-        url: url
-    }, (error, json) => {
-        if (error) {
-            res.send({
-                sentiment: error.message
-            })
-            return
+app.get('/trip_details', function (req, res) {
+    res.sendFile('trip_details.html', { root: path.join(__dirname, '../../dist') })
+})
+
+app.post('/create_trip', function (req, res) {
+    try {
+        const { destination, arrival, departure } = req.body
+        localstorage.setItem('destination', destination)
+        localstorage.setItem('arrival', arrival)
+        localstorage.setItem('departure', departure)
+        if (localstorage.getItem('destination')) {
+            res.sendStatus(201)
+        } else {
+            res.sendStatus(400)
         }
-
-        const { polarity, subjectivity } = json
-        const sentiment = `This article's polarity is ${polarity} and its subjectivity is ${subjectivity}.`
-        res.send({
-            sentiment: sentiment
-        })
-    })
-
+    } catch (error) {
+        console.log(`post::create_trip error: ${error}`)
+        res.sendStatus(500)
+    }
 })
 
 const port = process.env.PORT

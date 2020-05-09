@@ -46,8 +46,12 @@ module.exports = {
             filename: "./index.html"
         }),
         new HtmlWebPackPlugin({
-            template: "./src/client/views/templates/create_trip.html",
-            filename: "./create_trip.html",
+            template: "./src/client/views/templates/trip_details.html",
+            filename: "./trip_details.html",
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/client/views/templates/my_trips.html",
+            filename: "./my_trips.html",
         }),
         new CleanWebpackPlugin({
             // Simulate the removal of files

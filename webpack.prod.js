@@ -32,17 +32,29 @@ module.exports = {
                     loader: 'svg-url-loader',
                     options: {}
                 }
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                  }
+                ]
             }
         ]
     },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/templates/index.html",
-            filename: "./index.html",
+            filename: "./index.html"
         }),
         new HtmlWebPackPlugin({
-            template: "./src/client/views/templates/create_trip.html",
-            filename: "./create_trip.html",
+            template: "./src/client/views/templates/trip_details.html",
+            filename: "./trip_details.html",
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/client/views/templates/my_trips.html",
+            filename: "./my_trips.html",
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css'

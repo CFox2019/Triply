@@ -29,28 +29,12 @@
     background-color: rgba(255, 255, 255, 0.8)
 }
 
-#destination {
+.form_input {
     @extend %where_to_input;
     display: block;
 }
 
-.arrival_input {
-    @extend %where_to_input;
-    display: block;
-}
-
-.arrival_input_error {
-    @extend %where_to_input;
-    display: block;
-    border: 4px solid #ff0000;
-}
-
-.departure_input {
-    @extend %where_to_input;
-    display: block;
-}
-
-.departure_input_error {
+.form_input_error {
     @extend %where_to_input;
     display: block;
     border: 4px solid #ff0000;

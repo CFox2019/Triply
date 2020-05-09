@@ -9,10 +9,10 @@
         <main>
             <section id="where_to">
                 <h1>Where to?</h1>
-                <form>
-                    <input id="destination" type="text" name="input" value="" placeholder="Enter Destination">
-                    <input id="arrival" class="arrival_input" type="text" name="input" value="" placeholder="Arrival mm/dd/yyyy">
-                    <input id="departure" class="departure_input" type="text" name="input" value="" placeholder="Departure mm/dd/yyyy">
+                <form onsubmit="return Client.handleWhereToSubmit(event)">
+                    <input id="destination" class="form_input" type="text" name="input" value="" placeholder="Enter Destination">
+                    <input id="arrival" class="form_input" type="text" name="input" value="" placeholder="Arrival mm/dd/yyyy">
+                    <input id="departure" class="form_input" type="text" name="input" value="" placeholder="Departure mm/dd/yyyy">
                     <input id="create_trip_submit" type="submit" name="" value="Create Trip">
                 </form>
             </section>

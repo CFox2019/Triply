@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <%= require('html-loader!../partials/head.html') %>
+
+    <body>
+
+        <%= require('html-loader!../partials/header.html') %>
+
+        <main>
+            <h1>Trip Details</h1>
+
+        </main>
+
+        <%= require('html-loader!../partials/footer.html') %>
+
+        <!-- <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script> -->
+
+    </body>
+</html>
