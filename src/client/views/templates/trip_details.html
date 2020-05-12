@@ -7,11 +7,24 @@
         <%= require('html-loader!../partials/header.html') %>
 
         <main>
-            <h1>Trip Details</h1>
-
+            <section id="trip_details">
+                <h1>Trip Details</h1>
+                <div id="destination_wrapper">
+                    <h2 id="destination"></h2>
+                    <h3 id="arrival_date" class="trip_dates"></h3>
+                    <h3 class="trip_dates">-</h3>
+                    <h3 id="departure_date" class="trip_dates"></h3>
+                </div>
+            </section>
         </main>
 
         <%= require('html-loader!../partials/footer.html') %>
+
+        <script>
+            window.onload = (event) => {
+                Client.getTripDetails()
+            }
+        </script>
 
         <!-- <script>
             // Check that service workers are supported
