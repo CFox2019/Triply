@@ -10,7 +10,8 @@
             <section id="where_to">
                 <h1>Where to?</h1>
                 <form onsubmit="return Client.handleWhereToSubmit(event)">
-                    <input id="destination" class="form_input" type="text" name="input" value="" placeholder="Enter Destination">
+                    <input id="destination" list="destination_options" class="form_input" type="text" name="input" value="" placeholder="Enter Destination">
+                    <datalist id="destination_options"></datalist>
                     <input id="arrival" class="form_input" type="text" name="input" value="" placeholder="Arrival mm/dd/yyyy">
                     <input id="departure" class="form_input" type="text" name="input" value="" placeholder="Departure mm/dd/yyyy">
                     <input id="create_trip_submit" type="submit" name="" value="Create Trip">
@@ -43,6 +44,12 @@
         </main>
 
         <%= require('html-loader!../partials/footer.html') %>
+
+        <script>
+            window.onload = (event) => {
+                Client.registerDestinationAutocomplete()
+            }
+        </script>
 
         <!-- <script>
             // Check that service workers are supported

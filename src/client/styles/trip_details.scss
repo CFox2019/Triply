@@ -13,7 +13,7 @@
     background-size: 140%;
 }
 
-#destination {
+#destination_place {
     color: #ffffff;
     font-size: 2em;
     text-shadow: 1px 2px 5px #000000;
@@ -26,9 +26,34 @@
     text-shadow: 1px 2px 3px #000000;
 }
 
+#trip_days_container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.trip_day_cell {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin: 5px auto;
+    border: 2px solid #dddddd;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+.weather_temp {
+    font-size: 2em;
+    margin-top: 40%;
+}
+
 @media only screen and (min-width: 900px) {
     #destination_wrapper {
         height: 400px;
+    }
+
+    .trip_day_cell {
+        margin: 5px;
     }
 }
 

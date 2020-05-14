@@ -4,9 +4,17 @@ import { checkIfValidDestination } from './destinationValidator'
 export async function handleWhereToSubmit(event) {
     event.preventDefault()
 
-    // check what text was put into the form field
     const destination = document.getElementById('destination')
-    const destinationValue = destination.value
+    const destinationDatalist = document.getElementById(destination.getAttribute("list"));
+    const selectedPlaceOption = destinationDatalist.options.namedItem(destination.value)
+    let destinationValue, destinationLat, destinationLon
+    try {
+        destinationValue = selectedPlaceOption.getAttribute('name')
+        destinationLat = selectedPlaceOption.getAttribute('lat')
+        destinationLon = selectedPlaceOption.getAttribute('lon')
+    } catch (error) {
+        console.log('error', error)
+    }
     if (destination.classList.contains("form_input_error")) {
         destination.classList.remove("form_input_error")
         destination.classList.add("form_input")
@@ -23,7 +31,6 @@ export async function handleWhereToSubmit(event) {
         departure.classList.add("form_input")
         departure.classList.remove("form_input_error")
     }
-
     let enteredInvalidDestination = false
     if (!checkIfValidDestination(destinationValue)) {
         destination.classList.remove("form_input")
@@ -43,7 +50,7 @@ export async function handleWhereToSubmit(event) {
         enteredInvalidDepartureDate = true
     }
     if (enteredInvalidDestination || enteredInvalidArrivalDate || enteredInvalidDepartureDate) {
-        alert("You've entered an invalid destination and/or date. For dates, please use format MM/DD/YYYY.")
+        alert("You've entered an invalid destination and/or date. For destination, you must select a destination from the option list presented while typing. For dates, please use format MM/DD/YYYY.")
         return
     }
 
@@ -63,6 +70,8 @@ export async function handleWhereToSubmit(event) {
         },
         body: JSON.stringify({
             destination: destinationValue,
+            lat: destinationLat,
+            lon: destinationLon,
             arrival: arrivalDate,
             departure: departureDate
         })

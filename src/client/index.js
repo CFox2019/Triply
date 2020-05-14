@@ -1,5 +1,6 @@
 import { handleWhereToSubmit } from './js/createTripHandler'
 import { getTripDetails } from './js/tripDetailsHandler'
+import { registerDestinationAutocomplete } from './js/destinationAutocomplete'
 import './js/navigation'
 import './styles/resets.scss'
 import './styles/base.scss'
@@ -11,5 +12,6 @@ import './styles/trip_details.scss'
 
 export {
     handleWhereToSubmit,
-    getTripDetails
+    getTripDetails,
+    registerDestinationAutocomplete
 }

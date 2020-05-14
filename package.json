@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node --experimental-modules src/server/index.mjs",
+    "start": "node --experimental-modules -r dotenv/config src/server/index.mjs",
     "start-prod": "npm run build-prod && npm run start",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
