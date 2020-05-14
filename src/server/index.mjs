@@ -84,7 +84,4 @@ app.post('/create_trip', async function (req, res) {
     }
 })
 
-const port = process.env.PORT
-app.listen(port, function () {
-    console.log(`Triply app listening on port ${port}!`)
-})
+export { app }

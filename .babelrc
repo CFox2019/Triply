@@ -1,3 +1,9 @@
 {
-    "presets": ["@babel/preset-env"]
+    "presets": ["@babel/preset-env"],
+    "env": {
+        "test": {
+            "presets": [["@babel/preset-env",{"modules": false}]],
+            "plugins": [["@babel/plugin-transform-modules-commonjs"], ["@babel/plugin-transform-runtime", {"spec": true}]]
+        }
+    }
 }

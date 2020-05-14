@@ -54,6 +54,10 @@
     display: block;
 }
 
+#create_trip_submit:hover {
+    background-color: #30ddc7;
+}
+
 @media only screen and (min-width: 600px) {
     #where_to {
         background-position: left 0px bottom 0px;
