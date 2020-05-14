@@ -1,41 +1,15 @@
-import { checkIfValidUrl } from '../src/client/js/urlValidator'
+import { checkIfValidDateFormat } from '../src/client/js/dateValidator'
 
-describe("Given a URL Protocol", () => {
-    test("it should return true when containing HTTPS", () => {
-        const input = 'https://www.cnn.com/2020/04/15/us/states-reopen-coronavirus-trnd/index.html'
+describe("Given a date", () => {
+    test("it should return true when in expected format", () => {
+        const input = '05/14/2020'
         const output = true
-        expect(checkIfValidUrl(input)).toEqual(output)
+        expect(checkIfValidDateFormat(input)).toEqual(output)
     });
 
-    test("it should return true when containing HTTP", () => {
-        const input = 'http://www.cnn.com/2020/04/15/us/states-reopen-coronavirus-trnd/index.html'
-        const output = true
-        expect(checkIfValidUrl(input)).toEqual(output)
-    });
-});
-
-describe("Given a no URL Protocol", () => {
-    test("it should return true when the domain contains www.", () => {
-        const input = 'www.cnn.com/2020/04/15/us/states-reopen-coronavirus-trnd/index.html'
-        const output = true
-        expect(checkIfValidUrl(input)).toEqual(output)
-    });
-
-    test("it should return true when the domain contains .com", () => {
-        const input = 'cnn.com/2020/04/15/us/states-reopen-coronavirus-trnd/index.html'
-        const output = true
-        expect(checkIfValidUrl(input)).toEqual(output)
-    });
-
-    test("it should return true when the domain contains .org", () => {
-        const input = 'cnn.org/2020/04/15/us/states-reopen-coronavirus-trnd/index.html'
-        const output = true
-        expect(checkIfValidUrl(input)).toEqual(output)
-    });
-
-    test("it should return true when the domain contains .net", () => {
-        const input = 'cnn.net/2020/04/15/us/states-reopen-coronavirus-trnd/index.html'
-        const output = true
-        expect(checkIfValidUrl(input)).toEqual(output)
+    test("it should return false when not in expected format", () => {
+        const input = '2020-05-14'
+        const output = false
+        expect(checkIfValidDateFormat(input)).toEqual(output)
     });
 });
