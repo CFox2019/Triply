@@ -22,14 +22,14 @@ header {
     height: 100%;
 }
 
-.navigation {
+#navigation {
     flex: 1;
     order: 2;
     text-align: right;
     padding-top: 20px;
 }
 
-.navigation a:link, a:visited {
+#navigation a:link, a:visited {
     font-size: 18px;
     text-decoration: none;
     color: #ffffff;
@@ -37,7 +37,7 @@ header {
     margin: 10px 0px 10px 10px;
 }
 
-.navigation a:hover {
+#navigation a:hover {
     text-decoration: underline;
 }
 

@@ -1,0 +1,32 @@
+#my_trips h1 {
+    font-size: 3em;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+#trips_list {
+    margin: 20px 0px;
+    padding: 10px 0px;
+    color: #000000;
+}
+
+%common_link_styles {
+    background-color: #00ad97;
+    border: 2px solid #30ddc7;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#trips_list a:link {
+    @extend %common_link_styles;
+}
+
+#trips_list a:hover {
+    @extend %common_link_styles;
+    text-decoration: underline;
+}
+
+#trips_list a:visited {
+    @extend %common_link_styles;
+}

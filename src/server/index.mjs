@@ -39,6 +39,16 @@ app.post('/autocomplete', async function (req, res) {
     res.status(200).send({places: places})
 })
 
+app.get('/my_trips_data', function (req, res) {
+    res.status(200).send({
+        trips: [{
+            destination: localStorage.getItem('destination'),
+            arrival: localStorage.getItem('arrival'),
+            departure: localStorage.getItem('departure')
+        }]
+    })
+})
+
 app.get('/trip_data', async function (req, res) {
     const destination = localStorage.getItem('destination')
     const lat = localStorage.getItem('lat')
