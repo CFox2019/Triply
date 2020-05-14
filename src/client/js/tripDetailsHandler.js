@@ -1,5 +1,9 @@
 import moment from 'moment'
 
+/**
+ * Used to fetch the stored trip details from the server's `trip_data` endpoint
+ * and update the UI with the retreived trip data.
+ */
 export async function getTripDetails() {
     const response = await fetch('/trip_data', {
         method: 'get',
@@ -42,6 +46,12 @@ export async function getTripDetails() {
     }
 }
 
+/**
+ * Used to get all dates between the `startDate` and `endDate`.
+ *
+ * @param {string} startDate The start date string
+ * @param {string} endDate The end date string
+ */
 function getDates(startDate, endDate) {
     let dates = []
 

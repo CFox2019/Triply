@@ -1,3 +1,8 @@
+/**
+ * Used to validate a date matches the required format
+ *
+ * @param {string} dateString The date string to validate
+ */
 export function checkIfValidDateFormat(dateString) {
     console.log("::: Running checkIfValidDateFormat :::", dateString)
 

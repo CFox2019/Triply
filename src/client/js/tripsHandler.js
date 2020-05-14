@@ -1,3 +1,7 @@
+/**
+ * Used to fetch the stored trips data from the server's `my_trips_data` endpoint
+ * and updates the UI with the retreived data.
+ */
 export async function getTrips() {
     const response = await fetch('/my_trips_data', {
         method: 'get',

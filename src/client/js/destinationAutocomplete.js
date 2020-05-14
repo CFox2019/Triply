@@ -1,5 +1,9 @@
 import fetch from 'node-fetch'
 
+/**
+ * Used to setup the input event listener on the destination input field
+ * and handle fetching and displaying the places suggestions from the `/autocfomplete` endpoint.
+ */
 export function registerDestinationAutocomplete() {
     const destinationOptions = document.getElementById('destination_options')
     async function autocomplete(event) {

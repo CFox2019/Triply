@@ -2,15 +2,21 @@ import express from 'express'
 import path from 'path'
 const __dirname = path.resolve()
 const root = path.join(__dirname, 'dist')
+
 import dotenv from 'dotenv'
 dotenv.config()
+
 import cors from 'cors'
+
 import LocalStorage from 'node-localstorage'
 const localStorage = new LocalStorage.LocalStorage('./triply_data')
+
 import { PixabayApi } from './pixabay_api.mjs'
 const pixabayApi = new PixabayApi(process.env.PIXABAY_API_KEY)
+
 import { GeonamesApi } from './geonames_api.mjs'
 const geonamesApi = new GeonamesApi(process.env.GEONAMES_API_KEY)
+
 import { WeatherbitApi } from './weatherbit_api.mjs'
 const weatherbitApi = new WeatherbitApi(process.env.WEATHERBIT_API_KEY)
 
@@ -32,6 +38,9 @@ app.get('/trip_details', function (req, res) {
     res.sendFile('trip_details.html', { root: root })
 })
 
+/**
+ * Returns an array of places as possible matches for the `text` body parameter
+ */
 app.post('/autocomplete', async function (req, res) {
     const { body: { text } } = req
     console.log('text', text)
@@ -39,6 +48,9 @@ app.post('/autocomplete', async function (req, res) {
     res.status(200).send({places: places})
 })
 
+/**
+ * Returns an array of trip data previously stored using the `/create_trip` endpoint.
+ */
 app.get('/my_trips_data', function (req, res) {
     res.status(200).send({
         trips: [{
@@ -49,6 +61,9 @@ app.get('/my_trips_data', function (req, res) {
     })
 })
 
+/**
+ * Returns a JSON object containing the trip details stored using the `/create_trip` endpoint
+ */
 app.get('/trip_data', async function (req, res) {
     const destination = localStorage.getItem('destination')
     const lat = localStorage.getItem('lat')
@@ -65,6 +80,9 @@ app.get('/trip_data', async function (req, res) {
     })
 })
 
+/**
+ * Used to store trip details so that it can be recalled later while navigating the site
+ */
 app.post('/create_trip', async function (req, res) {
     try {
         const { destination, arrival, departure, lat, lon } = req.body
